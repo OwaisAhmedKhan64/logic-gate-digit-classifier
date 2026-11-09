@@ -6,12 +6,15 @@ biases: np.ndarray = np.load("models/biases.npy")
 X_test: np.ndarray = np.load("data/X_test.npy")
 y_test: np.ndarray = np.load("data/y_test.npy")
 
-w0: np.ndarray = weights[0]  # Shape: (64,)
-b0: int = int(biases[0])
+number_to_test: int = 3
+number_to_test_against: int = 0
+
+w0: np.ndarray = weights[number_to_test]  # Shape: (64,)
+b0: int = int(biases[number_to_test])
 w0_grid: np.ndarray = w0.reshape(8, 8)
 
-idx_0: int = int(np.where(y_test == 0)[0][0])
-idx_1: int = int(np.where(y_test == 1)[0][0])
+idx_0: int = int(np.where(y_test == number_to_test)[0][0])
+idx_1: int = int(np.where(y_test == number_to_test_against)[0][0])
 
 def analyze_sample(sample_pixels: np.ndarray, title: str, true_digit: int) -> None:
     grid: np.ndarray = sample_pixels.reshape(8, 8).astype(int)
@@ -49,5 +52,5 @@ def analyze_sample(sample_pixels: np.ndarray, title: str, true_digit: int) -> No
     print(f"  Expected Sign Bit (Bit 7)      : {sign_bit}")
     print("=" * 55)
 
-analyze_sample(X_test[idx_0], "TEST CASE 1: REAL DIGIT '0'", true_digit=0)
-analyze_sample(X_test[idx_1], "TEST CASE 2: REAL DIGIT '1'", true_digit=1)
+analyze_sample(X_test[idx_0], f"TEST CASE 1: REAL DIGIT '{number_to_test}'", true_digit=number_to_test)
+analyze_sample(X_test[idx_1], f"TEST CASE 2: REAL DIGIT '{number_to_test_against}'", true_digit=number_to_test_against)
