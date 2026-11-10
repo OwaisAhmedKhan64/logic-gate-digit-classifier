@@ -6,8 +6,8 @@ biases: np.ndarray = np.load("models/biases.npy")
 X_test: np.ndarray = np.load("data/X_test.npy")
 y_test: np.ndarray = np.load("data/y_test.npy")
 
-number_to_test: int = 3
-number_to_test_against: int = 0
+number_to_test: int = 9
+number_to_test_against: int = 5
 
 w0: np.ndarray = weights[number_to_test]  # Shape: (64,)
 b0: int = int(biases[number_to_test])
@@ -47,8 +47,8 @@ def analyze_sample(sample_pixels: np.ndarray, title: str, true_digit: int) -> No
 
     print("-" * 55)
     print(f"  Sum of all 8 Rows              : {total_pixel_sum:+d}")
-    print(f"  Digit 0 Bias                   : {b0:+d}")
-    print(f"  Expected Score (Score_0)       : {final_score:+d}")
+    print(f"  Digit {number_to_test} Bias                   : {b0:+d}")
+    print(f"  Expected Score                 : {final_score:+d}")
     print(f"  Expected Sign Bit (Bit 7)      : {sign_bit}")
     print("=" * 55)
 
