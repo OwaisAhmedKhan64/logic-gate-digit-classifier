@@ -14469,4 +14469,46 @@
     <wire from="(320,980)" to="(340,980)"/>
     <wire from="(560,60)" to="(610,60)"/>
   </circuit>
+  <circuit name="Automatic_Testing_Perceptron">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Automatic_Testing_Perceptron"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(1060,420)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Predicted_Digit_Binary"/>
+      <a name="type" val="output"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(180,270)" name="Clock">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="5" loc="(220,190)" name="Counter">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="max" val="0x9"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="5" loc="(470,290)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="contents">addr/data: 4 64
+183c246262243c38 3030703018183c3f 3838181830302e3c 382c08181c04263c 10302c7c7e381810 3e3c607038081838 181830383e32321c 1e3e36240c081810
+1c3e64381c14141c 383c6c3c1c041c38
+</a>
+      <a name="dataWidth" val="64"/>
+    </comp>
+    <comp lib="6" loc="(1060,330)" name="Hex Digit Display">
+      <a name="label" val="Predicted_Digit_Hex"/>
+    </comp>
+    <comp loc="(980,350)" name="Combined_Perceptron_Bus"/>
+    <wire from="(1040,350)" to="(1040,420)"/>
+    <wire from="(1040,350)" to="(1060,350)"/>
+    <wire from="(1040,420)" to="(1060,420)"/>
+    <wire from="(1060,330)" to="(1060,350)"/>
+    <wire from="(180,270)" to="(220,270)"/>
+    <wire from="(410,300)" to="(470,300)"/>
+    <wire from="(710,350)" to="(760,350)"/>
+    <wire from="(980,350)" to="(1040,350)"/>
+  </circuit>
 </project>
