@@ -24,7 +24,7 @@ for digit in range(10):
     val_64: int = 0
     for bit_idx in range(64):
         if pixels[bit_idx] == 1:
-            val_64 |= (1 << bit_idx)
+            val_64 |= (1 << (63 - bit_idx))
 
     hex_str: str = f"{val_64:016x}"
     hex_64_list.append(hex_str)
